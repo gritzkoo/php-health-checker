@@ -14,6 +14,12 @@ ___
 
 This is a PHP package that allows you to track the health of your application, providing two **_methods_** of checking `$checkt->liveness()` and `$checker->readiness()`:
 
+## How to install
+
+```sh
+composer require gritzkoo/php-health-checker
+```
+
 ## Bootstrapping the checker
 
 ```php
@@ -106,11 +112,6 @@ Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that 
 }
 ```
 
-## How to install
-
-```sh
-composer require gritzkoo/php-health-checker
-```
 
 ## Create a HTTP inteface to expose probs
 
