@@ -10,6 +10,7 @@ jobs:
         uses: baschny/php-composer-action@v1
       - name: run tests
         run: composer coverage
+      # reference guide in https://github.com/php-coveralls/php-coveralls
       - name: send coverage to Coveralls.io
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
