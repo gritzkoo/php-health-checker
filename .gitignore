@@ -1,3 +1,4 @@
 .phpunit.cache
 coverage
 clover.xml
+vendor
