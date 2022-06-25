@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Healthcheck;
+namespace App\Services;
 
 use App\Api\YourIntegrationA;
 use App\Api\YourIntegrationb;
@@ -30,10 +30,14 @@ class Healthcheck
             'integrations' => [
                 [
                     'name' => 'YourIntegrationA',
+                    // is just a closure you write to test something and return
+                    // an instance of \Gritzkoo\HealthChecker\Check
                     'handle' => $api1->test
                 ],
                 [
                     'name' => 'YourIntegrationB',
+                    // is just a closure you write to test something and return
+                    // an instance of \Gritzkoo\HealthChecker\Check
                     'handle' => $api2->test
                 ],
             ]

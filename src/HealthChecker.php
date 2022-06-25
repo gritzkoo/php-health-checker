@@ -37,7 +37,25 @@ class HealthChecker
         ];
     }
     /**
-     * Undocumented function
+     * Readiness will return a full set of informations about the
+     * integrations list you pass to create a instance of \Gritzkoo\HealthChecker\HealthChecker
+     * with aditional informations like:
+     * {
+     *     "name": "My application name",
+     *     "version": "v1.0.0",
+     *     "status": true,
+     *     "date": "2022-06-25T11:52:56-03:00",
+     *     "duration": 0.08681011199951172,
+     *     "integrations": [
+     *         {
+     *             "name": "github status check",
+     *             "status": true,
+     *             "response_time": 0.08406686782836914,
+     *             "url": "https://github.com/status",
+     *             "error": null
+     *         }
+     *     ]
+     * }
      *
      * @return array
      */

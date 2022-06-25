@@ -52,7 +52,7 @@ trait HealthCheckerTrait
                     ];
                 }
             ],
-            // testing integrations
+            // testing integrations ===============================================================
             'should run readiness with a integration' => [
                 function () {
                     $conf = $this->defaultConfig;
@@ -74,6 +74,43 @@ trait HealthCheckerTrait
                         'method'       => Constants::READINESS,
                         'config'       => $conf,
                         'expected'     => $exp,
+                    ];
+                }
+            ],
+            'should run readiness and fail because the second integration fail' => [
+                function () {
+                    $conf = $this->defaultConfig;
+                    $conf['integrations'] = [
+                        [
+                            'name' => 'test 1',
+                            'handle' => function () {
+                                return new Check();
+                            }
+                        ],
+                        [
+                            'name' => 'test 2',
+                            'handle' => function () {
+                                return new Check(['error' => 'some error']);
+                            }
+                        ]
+                    ];
+                    $exp = $this->readinessContract;
+                    $exp['status'] = false;
+                    $exp['integrations'] = [
+                        [
+                            'name' => 'test 1',
+                            'status' => true,
+                        ],
+                        [
+                            'name' => 'test 2',
+                            'status' => false,
+                            'error' => 'some error'
+                        ]
+                    ];
+                    return [
+                        'method' => Constants::READINESS,
+                        'config' => $conf,
+                        'expected' => $exp
                     ];
                 }
             ],
@@ -154,7 +191,7 @@ trait HealthCheckerTrait
                     ];
                 }
             ],
-            // error section ======================================================================
+            // throw section ======================================================================
             'should throw error because construct is not an array' => [
                 function () {
                     return [

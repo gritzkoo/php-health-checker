@@ -70,7 +70,7 @@ ___
 
 ## $checker->liveness()
 
-Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that allows you to check if your application is *OK* without checking any kind of integration.
+Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that allows you to check if your application is _OK_ without checking any kind of integration.
 
 ```json
 {
@@ -91,7 +91,7 @@ Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that 
     "version": "v1.0.0",
     // the main status checks, will return true when all integrations does not fail
     "status": true, 
-    // 
+    // ISO 8601 date
     "date": "2022-06-25T11:52:56-03:00",
     "duration": 0.08681011199951172,
     "integrations": [
@@ -111,6 +111,7 @@ Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that 
 ```sh
 composer require gritzkoo/php-health-checker
 ```
+
 ## Create a HTTP inteface to expose probs
 
 Once you create an instance of `Gritzkoo\HealthChecker\HealthChecker` you should create 2 routes in your application to expose `liveness` and `readiness` actions like:
@@ -144,11 +145,12 @@ class HealthCheckController extends Controller
         return $this->checker->readiness()
     }
 }
-``` 
+```
 
 ___
 
->route file `routes/web.php` 
+>route file `routes/web.php`
+
 ```php
 <?php
 
