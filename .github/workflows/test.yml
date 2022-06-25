@@ -19,11 +19,7 @@ jobs:
         #   args: # optional, default is --optimize-autoloader --no-progress
         #   # OAuth token for accessing github private resources
         #   github_oauth: # optional, default is
-      - name: execute tests
-        run: composer coveralls
-      - name: Upload coverage results to Coveralls
+      - name: execute tests and send to coveralls.io
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          composer global require php-coveralls/php-coveralls
-          php-coveralls --coverage_clover=coverage/clover.xml -v
+        run: composer coveralls
