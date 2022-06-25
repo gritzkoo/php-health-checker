@@ -11,6 +11,6 @@ jobs:
       - name: run tests
         run: composer coverage
       - name: send coverage to Coveralls.io
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        # env:
+        #   COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: composer coveralls
