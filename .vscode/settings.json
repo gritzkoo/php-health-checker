@@ -1,7 +1,0 @@
-{
-    "yaml.schemas": {
-        "file:///toc.schema.json": "/toc\\.yml/i",
-        "file:///home/gritzko/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
-        "https://json.schemastore.org/github-action.json": "file:///home/gritzko/projects/pocs/php-health-checker-lw/.github/workflow/test.yml"
-    }
-}
