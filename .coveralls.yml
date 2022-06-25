@@ -1,5 +1,5 @@
-repo_token: ${COVERALLS_REPO_TOKEN}
-service_name: 'github actions'
+# repo_token: ${COVERALLS_REPO_TOKEN}
+service_name: php-coveralls
 
 # for php-coveralls
 coverage_clover: coverage/clover.xml

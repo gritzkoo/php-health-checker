@@ -31,7 +31,7 @@
             "rm -rf coverage .phpunit.cache && mkdir coverage && XDEBUG_MODE=coverage phpunit --coverage-html coverage --coverage-clover coverage/clover.xml --testdox --color"
         ],
         "coveralls": [
-            "php-coveralls"
+            "php-coveralls -vvv"
         ]
     }
 }
