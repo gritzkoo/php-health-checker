@@ -1,0 +1,33 @@
+{
+    "name": "k8s/health-checker",
+    "description": "Simple package to health-check",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "K8s\\HealthChecker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "K8s\\HealthCheckerTests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gritzko D. Kleiner",
+            "email": "gritzkoo@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ],
+        "coverage": [
+            "rm -rf coverage && mkdir coverage && XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html coverage"
+        ]
+    }
+}
