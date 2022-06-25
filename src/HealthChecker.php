@@ -1,10 +1,10 @@
 <?php
 
-namespace K8s\HealthChecker;
+namespace Gritzkoo\HealthChecker;
 
 use Closure;
 use InvalidArgumentException;
-use K8s\HealthChecker\Utils\Constants;
+use Gritzkoo\HealthChecker\Utils\Constants;
 
 class HealthChecker
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace K8s\HealthChecker\Utils;
+namespace Gritzkoo\HealthChecker\Utils;
 
 class Constants
 {

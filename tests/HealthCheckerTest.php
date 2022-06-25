@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace K8s\HealthCheckerTests;
+namespace Gritzkoo\HealthCheckerTests;
 
 use Closure;
-use K8s\HealthChecker\HealthChecker;
-use K8s\HealthCheckerTests\Providers\HealthCheckerTrait;
+use Gritzkoo\HealthChecker\HealthChecker;
+use Gritzkoo\HealthCheckerTests\Providers\HealthCheckerTrait;
 use PHPUnit\Framework\TestCase;
 
 final class HealthCheckerTest extends TestCase

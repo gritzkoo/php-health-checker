@@ -1,6 +1,6 @@
 <?php
 
-namespace K8s\HealthChecker;
+namespace Gritzkoo\HealthChecker;
 
 class Check
 {

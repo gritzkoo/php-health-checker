@@ -1,15 +1,26 @@
 {
     "name": "gritzkoo/php-health-checker",
     "description": "Simple package to health-check",
+    "keywords": [
+        "k8s",
+        "health-check",
+        "healthcheck",
+        "liveness probe",
+        "readiness probe",
+        "healthz",
+        "probe",
+        "liveness",
+        "readiness"
+    ],
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "K8s\\HealthChecker\\": "src/"
+            "Gritzkoo\\HealthChecker\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "K8s\\HealthCheckerTests\\": "tests/"
+            "Gritzkoo\\HealthCheckerTests\\": "tests/"
         }
     },
     "authors": [

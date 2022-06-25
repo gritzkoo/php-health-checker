@@ -1,11 +1,11 @@
 <?php
 
-namespace K8s\HealthCheckerTests\Providers;
+namespace Gritzkoo\HealthCheckerTests\Providers;
 
 use Exception;
 use InvalidArgumentException;
-use K8s\HealthChecker\Check;
-use K8s\HealthChecker\Utils\Constants;
+use Gritzkoo\HealthChecker\Check;
+use Gritzkoo\HealthChecker\Utils\Constants;
 use TypeError;
 
 trait HealthCheckerTrait
