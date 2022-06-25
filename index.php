@@ -9,29 +9,29 @@ $checker = new HealthChecker([
     'version' => 'v1.0.0',
     'integrations' => [
         [
-            'name' => 'github integration',
+            'name' => 'github integration1',
             'handle' => function () {
                 return new Check([
                     'error' => null,
-                    'url' => 'https://github.com/status'
+                    'url' => 'https://github.com/status1'
                 ]);
             }
         ],
         [
-            'name' => 'github integration',
+            'name' => 'github integration2',
             'handle' => function () {
                 return new Check([
                     'error' => new Exception("error"),
-                    'url' => 'https://github.com/status'
+                    'url' => 'https://github.com/status2'
                 ]);
             }
         ],
         [
-            'name' => 'github integration',
+            'name' => 'github integration3',
             'handle' => function () {
                 return new Check([
                     'error' => ['asdf' => 'sdsdf'],
-                    'url' => 'https://github.com/status'
+                    'url' => 'https://github.com/status3'
                 ]);
             }
         ],

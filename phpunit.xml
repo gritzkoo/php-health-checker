@@ -2,7 +2,6 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         cacheResultFile=".phpunit.cache/test-results"
          executionOrder="depends,defects"
          forceCoversAnnotation="false"
          beStrictAboutCoversAnnotation="true"
@@ -11,6 +10,7 @@
          convertDeprecationsToExceptions="false"
          failOnRisky="true"
          failOnWarning="true"
+         cacheResult ="false"
          verbose="true">
     <testsuites>
         <testsuite name="default">

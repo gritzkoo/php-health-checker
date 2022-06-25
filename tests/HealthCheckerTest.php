@@ -7,8 +7,6 @@ namespace K8s\HealthCheckerTests;
 use Closure;
 use K8s\HealthChecker\HealthChecker;
 use K8s\HealthCheckerTests\Providers\HealthCheckerTrait;
-use K8s\HealthCheckerTests\Utils\Defaults;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class HealthCheckerTest extends TestCase
@@ -29,10 +27,21 @@ final class HealthCheckerTest extends TestCase
         $checker = new HealthChecker($scenario['config']);
         $suit = $checker->{$scenario['method']}();
         $result = [];
-        foreach ($scenario['expected'] as $key => $value) {
-            $this->assertArrayHasKey($key, $suit);
-            $result[$key] = $value;
-        }
+        $this->hand($scenario['expected'], $result, $suit);
         $this->assertEquals($scenario['expected'], $result);
+    }
+    private function hand(&$exp, &$result, &$suit)
+    {
+        foreach ($exp as $key => $value) {
+            $this->assertArrayHasKey($key, $suit);
+            if (is_array($value)) {
+                $result[$key] = [];
+                $tmpRslt = &$result[$key];
+                $tmpSuit = &$suit[$key];
+                $this->hand($value, $tmpRslt, $tmpSuit);
+            } else {
+                $result[$key] = $suit[$key];
+            }
+        }
     }
 }
