@@ -2,8 +2,7 @@ name: Packagist.org packag update
 on:
   workflow_dispatch:
   release:
-    types:
-      - published
+  label:
 jobs:
   update:
     runs-on: ubuntu-latest
