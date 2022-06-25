@@ -36,9 +36,7 @@ final class HealthCheckerTest extends TestCase
             $this->assertArrayHasKey($key, $suit);
             if (is_array($value)) {
                 $result[$key] = [];
-                $tmpRslt = &$result[$key];
-                $tmpSuit = &$suit[$key];
-                $this->hand($value, $tmpRslt, $tmpSuit);
+                $this->hand($value, $result[$key], $suit[$key]);
             } else {
                 $result[$key] = $suit[$key];
             }
