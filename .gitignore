@@ -3,3 +3,4 @@ coverage
 clover.xml
 vendor
 index.php
+.vscode
