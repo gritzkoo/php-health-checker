@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: PHP Composer
+      - name: configure PHP Composer
         uses: baschny/php-composer-action@v1
       - name: run tests
         run: composer coverage
