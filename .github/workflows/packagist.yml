@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: call update packagist.org
         env:
-          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
           PACKAGIST_PACKAGE_URL: "https://packagist.org/packages/gritzkoo/php-health-checker"
         run: |
           HOST="https://packagist.org/api/update-package?username=gritzkoo&apiToken=${API_TOKEN}"
