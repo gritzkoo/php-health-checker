@@ -14,7 +14,6 @@ jobs:
           API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PACKAGIST_PACKAGE_URL: "https://packagist.org/packages/gritzkoo/php-health-checker"
         run: |
-          set -pipefail
           HOST="https://packagist.org/api/update-package?username=gritzkoo&apiToken=${API_TOKEN}"
           PAYLOAD="{\"repository\":{\"url\":\"${PACKAGIST_PACKAGE_URL}\"}}"
           curl -XPOST -H'content-type:application/json' \
