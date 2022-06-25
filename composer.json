@@ -28,11 +28,10 @@
             "phpunit --testdox --color"
         ],
         "coverage": [
-            "rm -rf coverage .phpunit.cache && mkdir coverage && XDEBUG_MODE=coverage phpunit --coverage-html coverage --testdox --color"
+            "rm -rf coverage .phpunit.cache && mkdir coverage && XDEBUG_MODE=coverage phpunit --coverage-html coverage --coverage-clover coverage/clover.xml --testdox --color"
         ],
         "coveralls": [
-            "XDEBUG_MODE=coverage phpunit --coverage-clover=coverage/clover.xml --testdox --color",
-            "php-coveralls --coverage_clover=coverage/clover.xml -v"
+            "php-coveralls"
         ]
     }
 }

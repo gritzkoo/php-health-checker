@@ -48,7 +48,7 @@ class HealthChecker
             Constants::NAME         => $this->name,
             Constants::VERSION      => $this->version,
             Constants::STATUS       => true,
-            Constants::DATE         => date('Y-m-d H:i:s'),
+            Constants::DATE         => date('c'),
             Constants::DURATION     => 0,
             Constants::INTEGRATIONS => []
         ];
