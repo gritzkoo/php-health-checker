@@ -3,3 +3,4 @@ service_name: 'github actions'
 
 # for php-coveralls
 coverage_clover: coverage/clover.xml
+json_path: coverage/coveralls-upload.json
