@@ -2,7 +2,14 @@
 
 [![test](https://github.com/gritzkoo/php-health-checker/actions/workflows/test.yml/badge.svg)](https://github.com/gritzkoo/php-health-checker/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/gritzkoo/php-health-checker/badge.svg?branch=main)](https://coveralls.io/github/gritzkoo/php-health-checker?branch=main)
-
+![GitHub issues](https://img.shields.io/github/issues/gritzkoo/php-health-checker)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/gritzkoo/php-health-checker)
+![GitHub](https://img.shields.io/github/license/gritzkoo/php-health-checker)
+![GitHub repo size](https://img.shields.io/github/repo-size/gritzkoo/php-health-checker)
+![Packagist Downloads](https://img.shields.io/packagist/dt/gritzkoo/php-health-checker)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/gritzkoo/php-health-checker)
+![Packagist Stars](https://img.shields.io/packagist/stars/gritzkoo/php-health-checker)
+![GitHub language count](https://img.shields.io/github/languages/count/gritzkoo/php-health-checker)
 ___
 
 This is a PHP package that allows you to track the health of your application, providing two **_methods_** of checking `$checkt->liveness()` and `$checker->readiness()`:
