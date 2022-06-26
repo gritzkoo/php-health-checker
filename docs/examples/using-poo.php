@@ -30,15 +30,19 @@ class Healthcheck
             'integrations' => [
                 [
                     'name' => 'YourIntegrationA',
-                    // is just a closure you write to test something and return
-                    // an instance of \Gritzkoo\HealthChecker\Check
-                    'handle' => $api1->test
+                    'handle' => function () use ($api1) {
+                        // is just a function you write to test something and return
+                        // an instance of \Gritzkoo\HealthChecker\Check
+                        return $api1->test();
+                    }
                 ],
                 [
                     'name' => 'YourIntegrationB',
-                    // is just a closure you write to test something and return
-                    // an instance of \Gritzkoo\HealthChecker\Check
-                    'handle' => $api2->test
+                    'handle' => function () use ($api2) {
+                        // is just a function you write to test something and return
+                        // an instance of \Gritzkoo\HealthChecker\Check
+                        return $api2->test();
+                    }
                 ],
             ]
         ]);
