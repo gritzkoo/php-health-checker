@@ -70,7 +70,11 @@ $checker = new HealthChecker([
 
 ```
 
-You will find a more detailed form to create an instance of `Gritzkoo\HealthChecker\HealthChecker` [HERE](./docs/examples/using-poo.php)
+## Example of use
+
+You can view this full Laravel application, with this package installed in:
+
+[https://github.com/gritzkoo/php-health-checker-example-app](https://github.com/gritzkoo/php-health-checker-example-app)
 
 ___
 
@@ -115,51 +119,13 @@ Will return an **_ARRAY_** that you can convert to **_JSON_** as below and that 
 
 ## Create a HTTP inteface to expose probs
 
+>Using Laravel application example <https://github.com/gritzkoo/php-health-checker-example-app>
+
 Once you create an instance of `Gritzkoo\HealthChecker\HealthChecker` you should create 2 routes in your application to expose `liveness` and `readiness` actions like:
 
-> example using laravel route approach
+- Controller <https://github.com/gritzkoo/php-health-checker-example-app/blob/main/app/Http/Controllers/HealthCheckController.php#L10-L22>
+- Route <https://github.com/gritzkoo/php-health-checker-example-app/blob/main/routes/web.php#L20-L22>
 
-____
-
->controller using a example of [Checker Instance like](./docs/examples/using-poo.php)
-
-```php
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Services\Healthcheck;
-
-class HealthCheckController extends Controller
-{
-    private $check;
-    public function __construct(Healthcheck $checker)
-    {
-        $this->checker = $checker;
-    }
-    public function liveness()
-    {
-        return $this->checker->liveness()
-    }
-    public function readiness()
-    {
-        return $this->checker->readiness()
-    }
-}
-```
-
-___
-
->route file `routes/web.php`
-
-```php
-<?php
-
-use App\Http\Controllers\HealthCheckController;
-
-Route::get('/health-check/liveness', [HealthCheckController::class, 'liveness'])->name('liveness');
-Route::get('/health-check/readiness', [HealthCheckController::class, 'readiness'])->name('readiness');
-```
 
 And then, you could call these endpoints manually to see your application health, but, if you are using modern Kubernetes deployment, you can config your chart to check your application with the setup below:
 
